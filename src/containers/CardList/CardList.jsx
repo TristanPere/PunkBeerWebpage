@@ -2,7 +2,7 @@ import React from "react";
 import Card from "../../components/Card/Card";
 
 import "./CardList.scss";
-const Main = (props) => {
+const CardList = (props) => {
   const { beersArr, filter, pageNumber, resultsPerPage } = props;
   const beersArrClone = [...beersArr];
 
@@ -44,10 +44,10 @@ const Main = (props) => {
       />
     );
   });
-  let start = resultsPerPage*(pageNumber);
+  let start = resultsPerPage*(pageNumber-1);
   const sliceOfBeer = beerJSX.slice(start,start+(resultsPerPage))
   
   return <div className="card-container">{sliceOfBeer}</div>;
 };
 
-export default Main;
+export default CardList;

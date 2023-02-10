@@ -1,6 +1,5 @@
 import "./App.scss";
 import { useState } from "react";
-import beers from "./data/beer";
 import allBeers from "./data/allBeers";
 import Navbar from "./containers/Navbar/Navbar";
 import CardList from "./containers/CardList/CardList";
@@ -11,45 +10,65 @@ function App() {
     Classic: false,
     Acidity: false,
   });
-  const [pageNumber, setPageNumber] = useState(1)
-  const [resultsPerPage, setResultsPerPage] = useState(20)
+  const [pageNumber, setPageNumber] = useState(1);
+  const [resultsPerPage, setResultsPerPage] = useState(20);
+  const [maxPages, setMaxPages] = useState(13);
   const filterTypeArr = ["ABV", "Classic", "Acidity"];
-  const handlePageNum = (event) =>{
-    setPageNumber(event.target.value)
-  }
-  const handleResultsPerPage = (event) =>{
-    setResultsPerPage(event.target.value)
-  }
+  const handlePageNum = (event) => {
+    const result = event.target.value;
+    if (pageNumber < maxPages && pageNumber > 1) {
+      result == "<"
+        ? setPageNumber(Number(pageNumber) - 1)
+        : result == ">"
+        ? setPageNumber(Number(pageNumber) + 1)
+        : setPageNumber(result);
+    } else if (pageNumber >= maxPages) {
+      setPageNumber(1);
+    } else if (pageNumber == 1) {
+      result == "<"
+        ? setPageNumber(1)
+        : result == ">"
+        ? setPageNumber(Number(pageNumber) + 1)
+        : setPageNumber(result);
+    }
+  };
+  console.log(pageNumber);
+  const handleResultsPerPage = (event) => {
+    setResultsPerPage(event.target.value);
+    setMaxPages(Math.ceil(allBeers.length / event.target.value));
+  };
   const handleNameInput = (event) => {
+    setPageNumber(1);
     setFilter({
       name: event.target.value,
       ABV: filter.ABV,
       Classic: filter.Classic,
       Acidity: filter.Acidity,
-    })
+    });
   };
   const handleCheck = (event) => {
-    if (event.target.value == "ABV") {
+    setPageNumber(1);
+    if (event.target.value === "ABV") {
       setFilter({
         name: filter.name,
         ABV: !filter.ABV,
         Classic: filter.Classic,
         Acidity: filter.Acidity,
       });
-    } else if (event.target.value == "Classic") {
+    } else if (event.target.value === "Classic") {
       setFilter({
         name: filter.name,
         ABV: filter.ABV,
         Classic: !filter.Classic,
         Acidity: filter.Acidity,
-      })
-    } else if (event.target.value == "Acidity") {
+      });
+    } else if (event.target.value === "Acidity") {
       setFilter({
         name: filter.name,
         ABV: filter.ABV,
         Classic: filter.Classic,
         Acidity: !filter.Acidity,
-      })
+      });
     }
   };
   return (
@@ -58,8 +77,16 @@ function App() {
         handleNameInput={handleNameInput}
         handleCheck={handleCheck}
         filterTypeArr={filterTypeArr}
+        handlePageNum={handlePageNum}
+        pageNumber={pageNumber}
+        handleResultsPerPage={handleResultsPerPage}
       />
-      <CardList beersArr={allBeers} filter={filter} pageNumber={pageNumber} resultsPerPage={resultsPerPage} />
+      <CardList
+        beersArr={allBeers}
+        filter={filter}
+        pageNumber={pageNumber}
+        resultsPerPage={resultsPerPage}
+      />
     </div>
   );
 }
