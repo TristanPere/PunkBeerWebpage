@@ -1,8 +1,10 @@
 import "./App.scss";
 import { useState } from "react";
+// import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import allBeers from "./data/allBeers";
 import Navbar from "./containers/Navbar/Navbar";
 import CardList from "./containers/CardList/CardList";
+
 function App() {
   const [filter, setFilter] = useState({
     name: "",
