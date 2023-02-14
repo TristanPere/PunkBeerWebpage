@@ -1,23 +1,47 @@
 .beerCard{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+    width:auto;
+    display: grid;
+    grid-template-rows: 3fr 1fr 1fr 0.5fr;
+    text-align: center;
     &__image{
         // width: 100%;
-        height: 10vh;
+        height: 30vh;
+        margin-bottom: 1%;
+        justify-self: center;
         
     }
     &__title{
         font-size: 1rem;
     }
-    &:hover {
+    
+}
+.beerCard--overlay{
+    width:auto;
+    display: grid;
+    grid-template-rows: 2fr 1fr 1fr 2fr 1fr 1fr;
+    text-align: center;
+    &__image{
+        height: 20vh;
+        justify-self: center;
+    }
+    &__title{
+        font-size: 1rem;
+        font-weight: 900;
+    }
+    
+    &__links{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        p:hover{
         cursor: pointer;
-      }
+    }
+    }
+    
 }
 .conatiner{
-    width: 15%;
+    width: 17%;
+    // height:auto;
     border: 1px solid black;
     display: flex;
     align-items: center;

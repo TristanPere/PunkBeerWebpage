@@ -1,0 +1,24 @@
+.container{
+    display: grid;
+    grid-template-areas:
+    'banner'
+    'information'
+    'main';
+}
+.beer-banner{
+    grid-area: banner;
+    display: flex;
+    flex-direction: row;
+    // &__img{
+    //     height:10%
+    // }
+}
+.info-banner{
+    grid-area: information;
+}
+.beer-main{
+    grid-area: main;
+}
+// className="beer-banner"
+// className="info-banner"
+// className="beer-main"

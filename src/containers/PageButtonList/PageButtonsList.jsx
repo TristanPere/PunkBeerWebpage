@@ -1,17 +1,15 @@
 import React from 'react'
 import Button from '../../components/Button/Button'
-
-const PageButtonsList = (props) => {
-    const {pageNumber, handlePageNum} = props
+import "./PageButtonList.scss"
+const PageButtonsList = ({handlePageNum,pageNumber}) => {
   return(
-    <label>Page Select:
-    <section>
+    <div className='page-select'>
+    Page Select: 
+    <section className='page-select'>
     <Button buttonText={"<"} handleClick={handlePageNum}/>
-    <Button buttonText={Number(pageNumber)} handleClick={handlePageNum}/>
-    <Button buttonText={Number(pageNumber)+1} handleClick={handlePageNum}/>
-    <Button buttonText={Number(pageNumber)+2} handleClick={handlePageNum}/>
+    <div>Page: {pageNumber}</div>
     <Button buttonText={">"} handleClick={handlePageNum}/>
-    </section></label>
+    </section></div>
   )
 }
 

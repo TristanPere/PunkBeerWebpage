@@ -1,0 +1,9 @@
+.page-details{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-right: 5%;
+    &__buttons{
+        margin-right: 5%;
+    }
+}

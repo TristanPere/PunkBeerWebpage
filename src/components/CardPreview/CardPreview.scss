@@ -1,4 +1,3 @@
-
 .card-preview {
   background-color: grey;
   position: fixed;
@@ -7,50 +6,59 @@
   right: 0;
   bottom: 0;
   z-index: 5;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   &__content {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    grid-template-areas:
+      'img item'
+      'img item'
+      'description description'
+      'pairings link';
+      grid-template-columns: 1fr 1fr;
+    position: relative;
+    background-color: grey;
+    width: 50%;
+    height: 50vw;
+    border-radius: 15px;
   }
 
   &__cross {
     position: absolute;
     top: 20px;
-    right: 50px;
+    right: 20px;
 
     &:hover {
       cursor: pointer;
     }
   }
-
   &__item {
+    grid-area: item;
     font-size: 30px;
     text-decoration: none;
     color: rgb(0, 0, 0);
     padding: 20px;
   }
+  &__image {
+    position: absolute;
+    grid-area: img;
+    height: 100%;
+    justify-self: center;
+  }
+  &__description{
+    grid-area: description;
+  }
+  &__pairings{
+    grid-area: pairings;
+  }
+  &__link{
+    grid-area: link;
+  }
+  
 }
 
 @media screen and (min-width: 992px) {
-  .card-preview {
-    background-color: rgba(0,0,0, 0.8);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    &__content {
-      position: relative;
-      background-color: grey;
-      width: 30%;
-      height: 30vw;
-      border-radius: 15px;
-    }
-
-    &__cross {
-      right: 20px;
-    }
-  }
 }
