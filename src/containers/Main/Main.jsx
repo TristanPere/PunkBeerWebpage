@@ -3,7 +3,6 @@ import CardList from "../CardList/CardList";
 import PageButtonsList from "../PageButtonList/PageButtonsList";
 import Dropdown from "../../components/Dropdown/Dropdown";
 import "./Main.scss";
-import { useState } from "react";
 const Main = ({
   beersArr,
   filter,
@@ -36,7 +35,6 @@ const Main = ({
           pageNumber={pageNumber}
           handlePageNum={handlePageNum}
         />
-        <p>Page: {pageNumber}</p>
       </div>
     </div>
   );

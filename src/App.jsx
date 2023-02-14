@@ -8,19 +8,6 @@ import BeerInfo from "./components/BeerInfo/BeerInfo";
 import Main from "./containers/Main/Main";
 
 function App() {
-  const [beers, setBeers] = useState([]);
-
-  const getBeers = async () => {
-    const res = await fetch("https://api.punkapi.com/v2/beers");
-    const data = await res.json();
-    console.log(data)
-    setBeers(data);
-  };
-  useEffect(() => {
-    getBeers();
-    console.log(beers);
-  }, []);
-
   const filterTypeArr = ["ABV", "Classic", "Acidity"];
   const [filter, setFilter] = useState({
     name: "",
@@ -29,22 +16,20 @@ function App() {
     Acidity: false,
   });
   const [pageNumber, setPageNumber] = useState(1);
-  const [resultsPerPage, setResultsPerPage] = useState(25);
-  const [maxPages, setMaxPages] = useState(13);
+  const [resultsPerPage, setResultsPerPage] = useState(20);
   const [arrayLength, setArrayLength] = useState(allBeers.length);
   const handleSetArrayLength = (array) => {
     setArrayLength(array.length);
-    setMaxPages(Math.ceil(arrayLength / resultsPerPage));
   };
   const handlePageNum = (event) => {
     const result = event.target.value;
-    if (pageNumber < maxPages && pageNumber > 1) {
+    if (beers.length!=0 && pageNumber > 1) {
       result == "<"
         ? setPageNumber(Number(pageNumber) - 1)
         : result == ">"
         ? setPageNumber(Number(pageNumber) + 1)
         : setPageNumber(result);
-    } else if (pageNumber >= maxPages) {
+    } else if (beers.length==0) {
       setPageNumber(1);
     } else if (pageNumber == 1) {
       result == "<"
@@ -56,7 +41,6 @@ function App() {
   };
   const handleResultsPerPage = (event) => {
     setResultsPerPage(event.target.value);
-    setMaxPages(Math.ceil(arrayLength / event.target.value));
   };
   const handleNameInput = (event) => {
     setFilter({
@@ -90,7 +74,19 @@ function App() {
       });
     }
   };
+  const [beers, setBeers] = useState([]);
 
+  const getBeers = async (pageNumber, resultsPerPage) => {
+    let url = `https://api.punkapi.com/v2/beers?page=${pageNumber}&per_page=${resultsPerPage}`
+    const res = await fetch(`https://api.punkapi.com/v2/beers?page=${pageNumber}&per_page=${resultsPerPage}`);
+    const data = await res.json();
+    console.log(data)
+    setBeers(data);
+  };
+  useEffect(() => {
+    getBeers(pageNumber, resultsPerPage);
+    console.log(beers);
+  }, [pageNumber, resultsPerPage]);
   return (
     <Router>
       <div className="App">
@@ -105,7 +101,7 @@ function App() {
                   filterTypeArr={filterTypeArr}
                 />
                 <Main
-                  beersArr={allBeers}
+                  beersArr={beers}
                   filter={filter}
                   pageNumber={pageNumber}
                   resultsPerPage={resultsPerPage}
@@ -121,7 +117,7 @@ function App() {
             element={
               <div>
                 <Link to="/"> All Beers </Link>
-                <BeerInfo beersArr={allBeers} />
+                <BeerInfo beersArr={beers} />
               </div>
             }
           ></Route>
