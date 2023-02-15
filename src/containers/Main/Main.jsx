@@ -6,11 +6,11 @@ import "./Main.scss";
 const Main = ({
   beersArr,
   filter,
+  resultsPerPage,
   handleResultsPerPage,
   pageNumber,
-  resultsPerPage,
-  handleSetArrayLength,
   handlePageNum,
+  arrayLengthFishing
 }) => {
   return (
     <div>
@@ -28,7 +28,7 @@ const Main = ({
         filter={filter}
         pageNumber={pageNumber}
         resultsPerPage={resultsPerPage}
-        handleSetArrayLength={handleSetArrayLength}
+        arrayLengthFishing={arrayLengthFishing}
       />
       <div className="page-details">
         <PageButtonsList
