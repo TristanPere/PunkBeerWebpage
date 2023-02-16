@@ -1,7 +1,11 @@
 .Navbar{
     padding: 3%;
-    margin: 1%;
-    border: 1px solid black;
     display: flex;
     flex-direction: row;
+    background: transparent;
+    align-items: center;
+    &__search{
+      background: transparent;
+      margin: 0 5% 0 5%;
+    }
   }

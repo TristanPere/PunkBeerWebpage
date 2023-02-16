@@ -1,9 +1,19 @@
-.page-details{
+.main{
+    background: transparent;
+}
+.pagedetails{
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
-    margin-right: 5%;
-    &__buttons{
-        margin-right: 5%;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0% 5% 0% 5%;
+    &__arrows{
+        margin: 0% 5% 0% 0%;
     }
+    &--end{
+        display: flex;
+        justify-content: end;
+        padding: 0% 5% 0% 0%;
+    }
+    
 }

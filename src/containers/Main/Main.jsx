@@ -10,18 +10,20 @@ const Main = ({
   handleResultsPerPage,
   pageNumber,
   handlePageNum,
+  finalPage,
   arrayLengthFishing
 }) => {
   return (
-    <div>
-      <div className="page-details">
-        <div className="page-details__buttons">
+    <div className="main">
+      <div className="pagedetails">
+        <div className="pagedetails__arrows">
           <PageButtonsList
             pageNumber={pageNumber}
+            finalPage={finalPage}
             handlePageNum={handlePageNum}
           />
         </div>
-        <Dropdown handleResultsPerPage={handleResultsPerPage} />
+        <Dropdown className="pagedetails__dropdown" handleResultsPerPage={handleResultsPerPage} />
       </div>
       <CardList
         beersArr={beersArr}
@@ -30,9 +32,10 @@ const Main = ({
         resultsPerPage={resultsPerPage}
         arrayLengthFishing={arrayLengthFishing}
       />
-      <div className="page-details">
+      <div className="pagedetails--end">
         <PageButtonsList
           pageNumber={pageNumber}
+          finalPage={finalPage}
           handlePageNum={handlePageNum}
         />
       </div>

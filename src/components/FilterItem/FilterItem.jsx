@@ -1,14 +1,19 @@
-import React from 'react'
-import './FilterItem.scss'
+import React from "react";
+import "./FilterItem.scss";
 const FilterItem = (props) => {
-  const {title, handleCheck, filterType} = props
+  const { title, handleCheck, filterType } = props;
   return (
-    <label className='control' htmlFor='checkbox'>
+    <label className="checkbox" htmlFor="checkbox">
+      <input
+        type="checkbox"
+        name="checkbox"
+        id="checkbox"
+        onClick={handleCheck}
+        value={filterType}
+      />
       {title}
-      <input type="checkbox" name="checkbox" id="checkbox" onClick={handleCheck} value={filterType} />
     </label>
+  );
+};
 
-  )
-}
-
-export default FilterItem
+export default FilterItem;

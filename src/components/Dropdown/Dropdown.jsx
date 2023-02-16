@@ -1,16 +1,17 @@
-import React from 'react'
-
-const Dropdown = ({handleResultsPerPage}) => {
-    
+import React from "react";
+import "./Dropdown.scss";
+const Dropdown = ({ handleResultsPerPage }) => {
   return (
-    <label>Beers Per Page: 
-    <select onChange={handleResultsPerPage}>
+    <label>
+      Beers Per Page:
+      <select onChange={handleResultsPerPage}>
         <option>20</option>
         <option>40</option>
         <option>60</option>
         <option>80</option>
-    </select></label>
-  )
-}
+      </select>
+    </label>
+  );
+};
 
-export default Dropdown
+export default Dropdown;

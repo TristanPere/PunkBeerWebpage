@@ -1,0 +1,17 @@
+select {
+	background-color: transparent;
+	border-radius:28px;
+	border:1px solid #164d1c;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #25631c;
+}
+select:hover {
+	background-color:#476e32;
+}
+select:active {
+	position:relative;
+	top:1px;
+}
