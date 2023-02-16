@@ -1,4 +1,4 @@
-.card-preview {
+.beer-preview {
   background-color: grey;
   position: fixed;
   top: 0;
@@ -14,33 +14,34 @@
   &__content {
     display: grid;
     grid-template-areas:
-      'img item'
-      'img item'
-      'description description'
-      'pairings link';
-      grid-template-columns: 1fr 1fr;
+      "img img img beer beer beer"
+      "img img img beer beer beer"
+      "description description description description description description"
+      "pairings pairings pairings pairings pairings link";
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 2fr 2fr 1fr 0.5fr;
     position: relative;
-    background-color: grey;
-    width: 50%;
-    height: 50vw;
+//     background-image: linear-gradient(to left, #BDBBBE 0%, #9D9EA3 100%), radial-gradient(88% 271%, rgba(255, 255, 255, 0.25) 0%, rgba(254, 254, 254, 0.25) 1%, rgba(0, 0, 0, 0.25) 100%), radial-gradient(50% 100%, rgba(255, 255, 255, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%);
+//  background-blend-mode: normal, lighten, soft-light;
+background-image: linear-gradient(to right, #c1c161 0%, #c1c161 0%, #d4d4b1 100%);
+    width: 100%;
+    height: 100vh;
     border-radius: 15px;
+    padding: 1%;
   }
-
   &__cross {
     position: absolute;
     top: 20px;
     right: 20px;
-
     &:hover {
       cursor: pointer;
     }
   }
-  &__item {
-    grid-area: item;
+  &__beer {
+    grid-area: beer;
     font-size: 30px;
-    text-decoration: none;
-    color: rgb(0, 0, 0);
     padding: 20px;
+    align-self: center;
   }
   &__image {
     position: absolute;
@@ -48,17 +49,37 @@
     height: 100%;
     justify-self: center;
   }
-  &__description{
+  &__description {
     grid-area: description;
+    justify-self: center;
+    align-self: center;
   }
-  &__pairings{
+  &__pairings {
     grid-area: pairings;
   }
-  &__link{
+  &__link {
     grid-area: link;
+    text-decoration: none;
+    color: black;
+    align-self: center;
+    &__button{
+      border: 2px inset gray;
+      background: transparent;
+      cursor: pointer;
+    }
   }
-  
 }
 
 @media screen and (min-width: 992px) {
+  .beer-preview {
+    &__content {
+      width: 50%;
+      height: 50vw;
+    }
+    &__cross {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+  }
 }

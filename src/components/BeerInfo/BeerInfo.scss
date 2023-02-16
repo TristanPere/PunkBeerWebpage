@@ -1,23 +1,73 @@
 .container{
     display: grid;
     grid-template-areas:
+    'home'
     'banner'
     'information'
     'main';
+    background-image: linear-gradient(to right, #c1c161 0%, #c1c161 0%, #d4d4b1 100%);
+    grid-template-rows: 0.1fr 2fr 0.1fr 2fr ;
+    grid-template-columns: 1fr;
+    width: 100vw;    
+}
+.homepage{
+    grid-area: home;
+    text-decoration: none;
+    color: black;
+    margin-left: 5%;
+    border: 2px inset gray;
+    background: transparent;
+    cursor: pointer;
 }
 .beer-banner{
     grid-area: banner;
     display: flex;
     flex-direction: row;
-    // &__img{
-    //     height:10%
-    // }
+    justify-content: center;
+    justify-self: center;
+    &__img{
+        height: 60vh;
+    }
+    &__titles{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 1%;
+        h3{
+            justify-self: center;
+        }
+    }
 }
 .info-banner{
     grid-area: information;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    justify-self: center;
+    &__units{
+        display: flex;
+        flex-direction: row;
+        &--help{
+            top: 1px;
+            height:2vh;
+        }
+        &--info{
+            text-align: start;
+        }
+    }
 }
 .beer-main{
+    justify-self: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
     grid-area: main;
+    &__ingredients{
+        display: flex;
+        flex-direction: row ;
+        justify-content: space-between;
+    }
 }
 // className="beer-banner"
 // className="info-banner"

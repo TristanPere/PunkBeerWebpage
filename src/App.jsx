@@ -11,15 +11,15 @@ import "./App.scss";
 function App() {
   const filterTypeArr = ["ABV", "Classic", "Acidity"];
   const [allBeers, setAllBeers] = useState([]);
+  const [pageNumber, setPageNumber] = useState(1);
+  const [resultsPerPage, setResultsPerPage] = useState(20);
+  const [finalPage, setFinalPage] = useState(17);
   const [filter, setFilter] = useState({
     name: "",
     ABV: false,
     Classic: false,
     Acidity: false,
   });
-  const [pageNumber, setPageNumber] = useState(1);
-  const [resultsPerPage, setResultsPerPage] = useState(20);
-  const [finalPage, setFinalPage] = useState(17);
   const arrayLengthFishing = (activeArr) => {
     setFinalPage(Math.ceil(activeArr.length / resultsPerPage));
   };
@@ -124,7 +124,6 @@ function App() {
             path="/beer/:beerID"
             element={
               <div>
-                <Link to="/"> All Beers </Link>
                 <BeerInfo beersArr={allBeers} />
               </div>
             }

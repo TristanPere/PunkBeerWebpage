@@ -27,7 +27,7 @@ const Card = ({ beer }) => {
         className="beerCard__image"
         src={beerIcon}
         alt={beer.name}
-        srcset={beer.image_url}
+        srcSet={beer.image_url}
       />
       <h1 className="beerCard__title">{beer.name}</h1>
       <p className="beerCard__tagline">{beer.tagline}</p>
@@ -40,7 +40,7 @@ const Card = ({ beer }) => {
         className="beerCard--overlay__image"
         src={beerIcon}
         alt={beer.name}
-        srcset={beer.image_url}
+        srcSet={beer.image_url}
       />
       <h1 className="beerCard--overlay__title">{beer.name}</h1>
       <p className="beerCard--overlay__tagline">{beer.tagline}</p>
@@ -59,7 +59,7 @@ const Card = ({ beer }) => {
   );
   return (
     <div
-      className="container"
+      className="card"
       onMouseOver={handleMouseOver}
       onMouseOut={handleMouseOut}
     >

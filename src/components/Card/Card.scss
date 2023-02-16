@@ -67,7 +67,7 @@ $backgroundcolor: linear-gradient(0deg, #003409 1%, #1a4d2f 75%, #003409 100%);
   }
   
 }
-.container {
+.card {
   width: 40%;
   border: 1px solid transparent;
   border-radius: 1rem ;
@@ -81,7 +81,7 @@ $backgroundcolor: linear-gradient(0deg, #003409 1%, #1a4d2f 75%, #003409 100%);
 }
 
 @media screen and (min-width: 992px) {
-  .container {
+  .card {
     width: 17%;
   }
   .beerCard--overlay {
