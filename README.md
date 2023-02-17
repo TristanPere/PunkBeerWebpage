@@ -10,14 +10,14 @@ The page has a home landing page where all the beers from the API can be viewed.
 
 
 ## Website:
-https://tristanpere.github.io/PunkBeerWebpage/
+https://tristanpere.github.io/punkbeerwebpage/
 
 ## Setup / Installation
 
 Within your computer's terminal:
  * Locate to a directory you wish to use as a save location
  * Copy git repo url to clone it
- ### `git clone https://github.com/TristanPere/PunkBeerWebpage/`
+ ### `git clone https://github.com/TristanPere/punkbeerwebpage/`
  * Paste into terminal 
  * Change directories into /PunkBeerWebpage/
  * To pick up all the files ignored in the gitignore you can run in the project directory:
