@@ -6,6 +6,7 @@ This repo contains all relevant files used to create the webpage. A breakdown of
 The page has been developed using React in Visual Studio Code.
 
 ## Functionality
+The page has a home landing page where all the beers from the API can be viewed. The beers can also be filtered by their name, alcholic percentage, brew year, and acidity. As there are a total of 325 beers, they can be viewed across different pages with the ability to change the results per page.
 
 
 ## Website:
