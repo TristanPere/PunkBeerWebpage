@@ -1,10 +1,8 @@
 import { useEffect, useState } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { Link } from "react-router-dom";
-
+import { HashRouter as Router, Routes, Route} from "react-router-dom";
 import Navbar from "./containers/Navbar/Navbar";
 
-import BeerInfo from "./components/BeerInfo/BeerInfo";
+import BeerInfo from "./containers/BeerInfo/BeerInfo";
 import Main from "./containers/Main/Main";
 
 import "./App.scss";
@@ -14,14 +12,15 @@ function App() {
   const [pageNumber, setPageNumber] = useState(1);
   const [resultsPerPage, setResultsPerPage] = useState(20);
   const [finalPage, setFinalPage] = useState(17);
+  const [activeBeerArr, setActiveBeerArr] = useState([])
   const [filter, setFilter] = useState({
     name: "",
     ABV: false,
     Classic: false,
     Acidity: false,
   });
-  const arrayLengthFishing = (activeArr) => {
-    setFinalPage(Math.ceil(activeArr.length / resultsPerPage));
+  const arrayLengthFishing = (BeerJSXArr) => {
+    setFinalPage(Math.ceil(BeerJSXArr.length / resultsPerPage));
   };
   const handleNameInput = (event) => {
     setPageNumber(1);
@@ -79,7 +78,9 @@ function App() {
         ? setPageNumber(Number(pageNumber) - 1)
         : setPageNumber(Number(pageNumber) + 1);
     } else if (pageNumber === finalPage) {
-      setPageNumber(1);
+      result === "<"
+        ? setPageNumber(Number(pageNumber) - 1)
+        : setPageNumber(1);
     } else if (pageNumber === 1) {
       result === "<"
         ? setPageNumber(finalPage)
@@ -124,7 +125,7 @@ function App() {
             path="/beer/:beerID"
             element={
               <div>
-                <BeerInfo beersArr={allBeers} />
+                <BeerInfo beersArr={allBeers}/>
               </div>
             }
           ></Route>

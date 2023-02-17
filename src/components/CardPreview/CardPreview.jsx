@@ -23,9 +23,9 @@ for (let i = 0; i<beer.food_pairing.length; i++){
           <div className="beer-preview__beer--name" onClick={togglePreview}>
             {beer.name}
           </div>
-          <p className="beer-preview__beer--info">
-            ABV: {beer.abv} | pH: {beer.ph}
-          </p>
+          <div className="beer-preview__beer--info">
+            <p>ABV: {beer.abv} | pH: {beer.ph}</p>
+          </div>
         </div>
         <img
           className="beer-preview__image"

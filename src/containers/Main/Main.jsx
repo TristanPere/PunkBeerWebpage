@@ -1,6 +1,6 @@
 import React from "react";
 import CardList from "../CardList/CardList";
-import PageButtonsList from "../PageButtonList/PageButtonsList";
+import PageButtonsList from "../../components/PageButtonList/PageButtonsList";
 import Dropdown from "../../components/Dropdown/Dropdown";
 import "./Main.scss";
 const Main = ({

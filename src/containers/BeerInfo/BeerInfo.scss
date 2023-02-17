@@ -1,0 +1,25 @@
+.container{
+    display: grid;
+    grid-template-areas:
+    'home'
+    'banner'
+    'main';
+    background-image: linear-gradient(to right, #c1c161 0%, #c1c161 0%, #d4d4b1 100%);
+    grid-template-rows: 0.1fr 0.9fr 1.5fr ;
+    grid-template-columns: 1fr;
+    width: 100vw;    
+}
+.homepage{
+    grid-area: home;
+    text-decoration: none;
+    color: black;
+    margin-left: 5%;
+    border: 2px inset gray;
+    background: transparent;
+    cursor: pointer;
+}
+
+
+// className="beer-banner"
+// className="info-banner"
+// className="beer-main"

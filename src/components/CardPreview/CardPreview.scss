@@ -42,6 +42,13 @@ background-image: linear-gradient(to right, #c1c161 0%, #c1c161 0%, #d4d4b1 100%
     font-size: 30px;
     padding: 20px;
     align-self: center;
+    &--info{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      font-size:1.5rem;
+    }
   }
   &__image {
     position: absolute;
@@ -56,6 +63,7 @@ background-image: linear-gradient(to right, #c1c161 0%, #c1c161 0%, #d4d4b1 100%
   }
   &__pairings {
     grid-area: pairings;
+    padding-right: 1%;
   }
   &__link {
     grid-area: link;
@@ -66,6 +74,9 @@ background-image: linear-gradient(to right, #c1c161 0%, #c1c161 0%, #d4d4b1 100%
       border: 2px inset gray;
       background: transparent;
       cursor: pointer;
+      border-radius: 5%;
+      padding: 5% 10% 5% 10%;
+      align-self: center;
     }
   }
 }
@@ -73,8 +84,8 @@ background-image: linear-gradient(to right, #c1c161 0%, #c1c161 0%, #d4d4b1 100%
 @media screen and (min-width: 992px) {
   .beer-preview {
     &__content {
-      width: 50%;
-      height: 50vw;
+      width: 40%;
+      height: 40vw;
     }
     &__cross {
       position: absolute;

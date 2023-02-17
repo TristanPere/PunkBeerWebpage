@@ -1,0 +1,33 @@
+.beer-main{
+    justify-self: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    grid-area: main;
+    width: 100vw;
+    min-width: 500px;
+    margin: 1%;
+    &__ingredients{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        &--items{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        &--malt{
+            margin: 1%
+        }
+        &--hops{
+            margin: 1%
+        }
+        &--yeast{
+            margin: 1%
+        }
+    }
+}
+@media screen and (min-width:994px) {
+    .beer-main{width: 50vw;}
+}
