@@ -10,13 +10,13 @@ The page has a home landing page where all the beers from the API can be viewed.
 
 ## Logic Notes
 Webpage logic:
-*getAllBeers uses the API to collect all the data from the API pages. The API fetch url is changed dependent on if ABV or Classic buttons are pressed filtering for those criteria. This is done at the App level
-*allBeers is the array that is passed into Main and then CardList to be filtered there by the name-input as well as a ph-filter. It is then cut into pieces of length resultsPerPage and displayed.
-*The filters to be applied are stored as a useState({object})
- *When a checkbox is click it has an attached function, that dependent on the value of the checkbox, changes the corresponding filter to the inverse of itself as all start false.
- *When a string is entered into the input box the value of the name key in filters is changed.
-*Page buttons move through the allBeers array that is filtered then sliced inside of CardList
-*arrayLengthFishing is a function that drills into the Main and then CardList to extract the number of elements in the array to be displayed. This means the value of finalPage can be updated dependent on what filters have been applied. Thus the page arrows cant increase passed this value. 
+* getAllBeers uses the API to collect all the data from the API pages. The API fetch url is changed dependent on if ABV or Classic buttons are pressed filtering for those criteria. This is done at the App level
+* allBeers is the array that is passed into Main and then CardList to be filtered there by the name-input as well as a ph-filter. It is then cut into pieces of length resultsPerPage and displayed.
+* The filters to be applied are stored as a useState({object})
+ * When a checkbox is click it has an attached function, that dependent on the value of the checkbox, changes the corresponding filter to the inverse of itself as all start false.
+ * When a string is entered into the input box the value of the name key in filters is changed.
+* Page buttons move through the allBeers array that is filtered then sliced inside of CardList
+* arrayLengthFishing is a function that drills into the Main and then CardList to extract the number of elements in the array to be displayed. This means the value of finalPage can be updated dependent on what filters have been applied. Thus the page arrows cant increase passed this value. 
 
 All filters set user back to page one.
 
