@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/punkbeerwebpage/static/css/main.f578e98f.css",
-    "main.js": "/punkbeerwebpage/static/js/main.e413c1f1.js",
+    "main.css": "/punkbeerwebpage/static/css/main.7a17dd6d.css",
+    "main.js": "/punkbeerwebpage/static/js/main.d8806686.js",
     "static/js/787.2c50eb5b.chunk.js": "/punkbeerwebpage/static/js/787.2c50eb5b.chunk.js",
     "static/media/beerIcon.png": "/punkbeerwebpage/static/media/beerIcon.a96fe0722375183ef07a.png",
     "index.html": "/punkbeerwebpage/index.html",
-    "main.f578e98f.css.map": "/punkbeerwebpage/static/css/main.f578e98f.css.map",
-    "main.e413c1f1.js.map": "/punkbeerwebpage/static/js/main.e413c1f1.js.map",
+    "main.7a17dd6d.css.map": "/punkbeerwebpage/static/css/main.7a17dd6d.css.map",
+    "main.d8806686.js.map": "/punkbeerwebpage/static/js/main.d8806686.js.map",
     "787.2c50eb5b.chunk.js.map": "/punkbeerwebpage/static/js/787.2c50eb5b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f578e98f.css",
-    "static/js/main.e413c1f1.js"
+    "static/css/main.7a17dd6d.css",
+    "static/js/main.d8806686.js"
   ]
 }
